@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaycee – Nguyễn Tuấn Khải</title>
+<meta name="description" content="Tuấn Khải, hay Jaycee, là một người trẻ đang học hỏi, xây dựng sự nghiệp và ghi lại hành trình trở thành phiên bản mình muốn trở thành.">
+<meta property="og:title" content="Jaycee – Nguyễn Tuấn Khải">
+<meta property="og:description" content="Learn. Build. Inspire. Vẫn đang học. Vẫn đang xây. Vẫn đang trở thành.">
+<meta property="og:url" content="https://nguyentuankhai.net">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nguyentuankhai.net/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<!--
+  ===== HƯỚNG DẪN NHANH =====
+  - Sửa CHỮ / LINK / thông số ẢNH  → file noi-dung.js (không cần sửa file này).
+  - Đổi ẢNH → dán đè ảnh mới cùng tên vào thư mục images/ (hero.jpg, learn.jpg, build.jpg, inspire.jpg).
+  - Ở file này chỉ cần sửa: <title>, mô tả Google (description) và thẻ og: ngay bên trên khi muốn đổi
+    tiêu đề/mô tả hiện trên Google, Facebook, Zalo.
+  Chi tiết: xem file HUONG-DAN.txt
+-->
+<style>
+:root{
+  --navy:#07142b;
+  --navy2:#0c1f42;
+  --bg:#f5f9ff;
+  --ink:#0b1b33;
+  --muted:#51627d;
+  --muted-d:#9fb0cc;
+  --blue:#1d5cff;
+  --cyan:#00c2ff;
+  --grad:linear-gradient(120deg,#1d5cff 0%,#00c2ff 100%);
+  --line-d:rgba(255,255,255,.12);
+  --line-l:#dce6f5;
+  --shadow:0 10px 30px rgba(18,52,120,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--navy);color:#fff;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+section{padding:120px 0;position:relative}
+.light{background:var(--bg);color:var(--ink)}
+h1,h2,h3,h4,.mt{font-family:"Montserrat",sans-serif}
+em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.it{font-family:"Montserrat",sans-serif;font-style:italic;font-weight:500;color:var(--cyan)}
+.light .it{color:var(--blue)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:"Montserrat";font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.light .eyebrow{color:var(--blue)}
+.eyebrow::before{content:"";width:36px;height:2px;border-radius:2px;background:var(--grad)}
+h2{font-size:clamp(32px,5vw,64px);line-height:1.08;font-weight:800;letter-spacing:-.03em;margin-bottom:22px}
+.lead{font-size:18px;color:var(--muted-d);max-width:580px}
+.light .lead{color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-family:"Montserrat";font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(0,140,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,140,255,.5)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(7,20,43,.86);backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,.18)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Montserrat";font-weight:800;font-size:18px}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-weight:900;font-size:16px;letter-spacing:-.02em}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:14.5px;font-weight:500}
+.nav-links a{color:rgba(255,255,255,.75);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang{display:flex;gap:6px;font-family:"Montserrat";font-size:12px;font-weight:700;letter-spacing:.08em;color:#fff}
+.lang button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;opacity:.45;padding:4px 2px}
+.lang button.active{opacity:1;color:var(--cyan)}
+.lang i{opacity:.3;font-style:normal}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.menu-btn svg{width:28px;height:28px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:float 12s ease-in-out infinite;pointer-events:none}
+.hero::before{width:540px;height:540px;background:#1d5cff;top:-180px;right:-140px}
+.hero::after{width:440px;height:440px;background:#00c2ff;bottom:-220px;left:-140px;animation-delay:-6s}
+@keyframes float{50%{transform:translate(40px,30px)}}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center;width:100%}
+.kicker{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:999px;font-size:14px;margin-bottom:28px}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(0,194,255,.2)}
+.hero h1{font-size:clamp(54px,9vw,128px);line-height:.98;font-weight:900;letter-spacing:-.045em;margin-bottom:30px}
+.hero .sub{font-size:19px;max-width:520px;color:rgba(255,255,255,.75);margin-bottom:38px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:48px}
+.hero-meta span{font-family:"Montserrat";font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;background:rgba(0,194,255,.1);color:#8fe3ff;border:1px solid rgba(0,194,255,.25)}
+
+/* Playing card portrait (K♠) */
+.card{position:relative;aspect-ratio:5/7;width:100%;max-width:360px;justify-self:end;border-radius:22px;padding:3px;background:var(--grad);transform:rotate(3deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px rgba(0,60,180,.35)}
+.card:hover{transform:rotate(0) translateY(-6px)}
+.card-in{position:absolute;inset:3px;border-radius:19px;background:linear-gradient(160deg,#10284f,#081733)}
+.card-photo{position:absolute;inset:58px 42px;border:1px solid rgba(255,255,255,.12);border-radius:10px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 35%,#163a75,#0a1a35 70%)}
+.card-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.card-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(7,20,43,.55));pointer-events:none}
+.card-photo .jc{font-family:"Montserrat";font-weight:900;font-size:100px;letter-spacing:-.05em;line-height:1}
+.card-photo small{position:absolute;bottom:14px;font-size:11px;color:rgba(255,255,255,.4)}
+.corner{position:absolute;display:flex;flex-direction:column;align-items:center;line-height:1;font-family:"Montserrat";font-weight:800}
+.corner b{font-size:30px}
+.corner .spade{width:22px;height:22px;margin-top:4px;color:var(--cyan)}
+.c-tl{top:16px;left:18px}
+.c-br{bottom:16px;right:18px;transform:rotate(180deg)}
+
+/* Marquee */
+.marquee{background:var(--grad);overflow:hidden;padding:20px 0;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:44px;animation:scroll 36s linear infinite;font-family:"Montserrat";font-size:clamp(20px,2.8vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+.marquee-track span{display:inline-flex;align-items:center;gap:44px}
+.marquee-track .o{color:transparent;-webkit-text-stroke:1.2px #fff}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:start}
+.about-text p{font-size:18.5px;color:var(--muted);margin-bottom:18px;max-width:620px}
+.about-text p strong{color:var(--ink)}
+.about-text .sign{font-size:24px;margin-top:28px}
+.facts{list-style:none;display:flex;flex-direction:column;gap:14px}
+.facts li{display:grid;grid-template-columns:80px 1fr;gap:14px;padding:20px 22px;background:#fff;border-radius:18px;box-shadow:var(--shadow);border-left:4px solid var(--cyan)}
+.facts .k{font-family:"Montserrat";font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);padding-top:3px}
+.facts .v{font-weight:600;font-size:16.5px;line-height:1.4}
+.facts .v small{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
+
+/* Philosophy */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.pillar-img{margin:-22px -16px 26px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative;background:#0a1a35}
+.pillar-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pillar:hover .pillar-img img{transform:scale(1.05)}
+.pillar-img figcaption{position:absolute;left:12px;bottom:12px;font-family:"Montserrat";font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:rgba(7,20,43,.7);backdrop-filter:blur(6px);color:#fff}
+.pillar{padding:38px 32px 42px;border-radius:22px;background:var(--navy2);border:1px solid var(--line-d);transition:background .35s,transform .35s}
+.pillar:hover{background:var(--grad);transform:translateY(-6px)}
+.pillar:hover .it,.pillar:hover p,.pillar:hover .no{color:#fff}
+.pillar .no{font-family:"Montserrat";font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--cyan)}
+.pillar h3{font-size:clamp(36px,3.8vw,52px);font-weight:900;letter-spacing:-.04em;margin:14px 0 6px;text-transform:uppercase}
+.pillar .it{font-size:18px;margin-bottom:20px;display:block}
+.pillar p{color:var(--muted-d);font-size:15.5px}
+
+/* Journey */
+.chapters{margin-top:60px}
+.chapter{display:grid;grid-template-columns:200px 1fr 1.1fr;gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line-l);transition:padding .35s}
+.chapter:first-child{border-top:1px solid var(--line-l)}
+.chapter:hover{padding-left:16px}
+.chapter:hover h3{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chapter .lbl{font-family:"Montserrat";font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.chapter h3{font-size:clamp(34px,4.6vw,58px);font-weight:900;letter-spacing:-.04em;line-height:1;text-transform:uppercase}
+.chapter p{font-size:16.5px;color:var(--muted)}
+.still{margin-top:52px;font-size:clamp(20px,2.8vw,32px);line-height:1.3}
+
+/* Building */
+.builds{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:60px}
+.build{background:var(--navy2);border:1px solid var(--line-d);border-radius:22px;padding:42px 38px;position:relative;overflow:hidden;transition:transform .35s,border-color .35s}
+.build::after{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.build:hover{transform:translateY(-6px);border-color:rgba(0,194,255,.4)}
+.build:hover::after{transform:scaleX(1)}
+.build .no{position:absolute;top:38px;right:38px;font-family:"Montserrat";font-size:44px;font-weight:900;opacity:.12}
+.build h3{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.build p{color:var(--muted-d);max-width:440px}
+.build .tag{display:inline-block;margin-top:18px;font-family:"Montserrat";font-size:11px;font-weight:700;letter-spacing:.16em;padding:5px 12px;border-radius:999px;background:rgba(0,194,255,.12);color:#8fe3ff}
+
+/* Personal code */
+.code{text-align:center}
+.code h2{font-size:clamp(52px,9vw,128px);font-weight:900;letter-spacing:-.04em;margin-bottom:24px}
+.code h2 .arr{font-weight:300;font-size:.5em;vertical-align:middle;margin:0 .2em;color:#9aaccc;-webkit-text-fill-color:#9aaccc}
+.code .lead{margin:0 auto}
+.symbols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px;text-align:left}
+.sym{background:#fff;border-radius:22px;padding:34px 30px 38px;box-shadow:var(--shadow);transition:transform .35s}
+.sym:hover{transform:translateY(-6px)}
+.glyph{height:110px;display:flex;align-items:center;gap:16px;font-family:"Montserrat";font-weight:900}
+.glyph .num{font-size:84px;line-height:1;letter-spacing:-.04em}
+.glyph .king{font-size:70px;line-height:1;color:var(--ink)}
+.mini-card{width:62px;height:86px;border-radius:9px;border:2px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(6deg);background:#fff}
+.mini-card b{font-size:30px}
+.mini-card .spade{width:24px;height:24px;margin-top:2px}
+.reels{display:flex;gap:6px;padding:8px;border-radius:14px;background:var(--grad)}
+.reels span{width:52px;height:74px;border-radius:8px;background:#fff;display:grid;place-items:center;font-size:46px;color:var(--blue);box-shadow:inset 0 -8px 12px rgba(29,92,255,.12)}
+.sym h4{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:22px 0 10px;color:var(--blue)}
+.sym p{font-size:15.5px;color:var(--muted);margin-bottom:16px}
+.sym .it{font-size:18px}
+
+/* World */
+.channels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.channel{background:var(--navy2);border:1px solid var(--line-d);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column;gap:12px;transition:background .3s,transform .3s}
+.channel:hover{background:var(--grad);transform:translateY(-6px)}
+.channel:hover p,.channel:hover .net{color:#fff}
+.channel .net{font-family:"Montserrat";font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);display:flex;justify-content:space-between;align-items:center}
+.channel .net svg{width:24px;height:24px}
+.channel h3{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.channel p{color:var(--muted-d);font-size:15px;flex:1}
+.channel .go{font-family:"Montserrat";font-size:14px;font-weight:700}
+.topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.topics span{border:1px solid rgba(0,194,255,.25);background:rgba(0,194,255,.08);border-radius:999px;padding:8px 16px;font-size:14px;color:#cfe9ff}
+.topics b{color:var(--cyan);font-family:"Montserrat";margin-right:8px}
+
+/* Manifesto */
+.manifesto{text-align:center}
+.manifesto blockquote{font-family:"Montserrat";font-size:clamp(24px,3.4vw,42px);line-height:1.3;font-weight:600;letter-spacing:-.02em;max-width:980px;margin:0 auto}
+.manifesto blockquote strong{font-weight:900}
+.manifesto .lines{margin:40px auto 0;font-size:18px;color:var(--muted);line-height:2}
+.manifesto .sig{margin-top:40px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.manifesto .sig span{font-family:"Montserrat";font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:999px;background:var(--grad);color:#fff}
+
+/* Contact */
+.contact{text-align:center;padding:140px 0;overflow:hidden}
+.contact::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:#1d5cff;filter:blur(130px);opacity:.35;top:-320px;left:50%;transform:translateX(-50%)}
+.contact .wrap{position:relative}
+.contact h2{max-width:900px;margin:0 auto 20px}
+.contact .lead{margin:0 auto 44px}
+.contact-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.btn-zalo{background:#0068ff;color:#fff;box-shadow:0 8px 24px rgba(0,104,255,.4)}
+.btn-zalo:hover,.btn-mess:hover{transform:translateY(-2px)}
+.btn-mess{background:#fff;color:var(--navy)}
+
+footer{background:#040d1d;padding:32px 0;font-size:14px;color:rgba(255,255,255,.5)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .it{font-size:15px}
+
+/* Floating chat */
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s;position:relative;color:#fff}
+.fab a:hover{transform:scale(1.08)}
+.fab .z{background:#0068ff;font-family:"Montserrat";font-weight:800;font-size:13px}
+.fab .z::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #0068ff;animation:ring 2s infinite}
+.fab .m{background:linear-gradient(135deg,#00b2ff,#006aff)}
+.fab .m svg{width:28px;height:28px}
+@keyframes ring{to{transform:scale(1.5);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero .wrap,.about-grid{grid-template-columns:1fr}
+  .card{justify-self:start;max-width:300px}
+  .pillars,.channels,.symbols{grid-template-columns:1fr}
+  .chapter{grid-template-columns:1fr;gap:10px}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  section{padding:88px 0}
+  .nav{background:rgba(7,20,43,.92);backdrop-filter:blur(10px)}
+  .nav .wrap{height:68px}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:rgba(7,20,43,.98);padding:8px 16px 20px}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:13px 0;border-bottom:1px solid var(--line-d)}
+  .menu-btn{display:block}
+  .logo span:last-child{display:none}
+  .hero{padding-top:110px}
+  .hero-cta,.contact-cta{flex-direction:column}
+  .hero-cta .btn,.contact-cta .btn{justify-content:center}
+  .builds{grid-template-columns:1fr}
+  .build{padding:34px 24px}
+  .build .no{top:30px;right:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Thông báo lỗi khi file noi-dung.js bị sửa sai (bình thường bị ẩn) -->
+<div id="loiNoiDung" hidden style="position:fixed;inset:0 0 auto;z-index:999;background:#d62828;color:#fff;padding:14px 20px;font:600 15px/1.5 system-ui;text-align:center">
+  ⚠ Lỗi file noi-dung.js — kiểm tra lại dấu ngoặc kép " và dấu phẩy , ở dòng vừa sửa (hoặc file chưa được upload lên hosting).
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="logo-mark" data-t="logo.chu"></span><span data-t="logo.ten"></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-t="menu.gioiThieu"></a></li>
+      <li><a href="#philosophy" data-t="menu.trietLy"></a></li>
+      <li><a href="#journey" data-t="menu.hanhTrinh"></a></li>
+      <li><a href="#building" data-t="menu.duAn"></a></li>
+      <li><a href="#code" data-t="menu.bieuTuong"></a></li>
+      <li><a href="#contact" data-t="menu.lienHe"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button data-set-lang="vi" class="active">VI</button><i>/</i><button data-set-lang="en">EN</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker"><span class="dot"></span><span data-t="hero.nhanTen"></span></p>
+      <h1 data-t="hero.tieuDe"></h1>
+      <p class="sub" data-t="hero.moTa"></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" data-link="zalo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+          <span data-t="nut.zalo"></span></a>
+        <a class="btn btn-ghost" href="#about"><span data-t="hero.nutPhu"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="hero-meta">
+        <span data-t="hero.nhan1"></span>
+        <span data-t="hero.nhan2"></span>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-in"></div>
+      <div class="corner c-tl" aria-hidden="true"><b>K</b><svg class="spade" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 3 9 3 13.5 3 16 5 18 7.5 18c1.4 0 2.6-.6 3.4-1.5L10 22h4l-.9-5.5c.8.9 2 1.5 3.4 1.5 2.5 0 4.5-2 4.5-4.5C21 9 15 6 12 2z"/></svg></div>
+      <div class="card-photo"><img data-anh="hero" alt=""></div>
+      <div class="corner c-br" aria-hidden="true"><b>K</b><svg class="spade" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 3 9 3 13.5 3 16 5 18 7.5 18c1.4 0 2.6-.6 3.4-1.5L10 22h4l-.9-5.5c.8.9 2 1.5 3.4 1.5 2.5 0 4.5-2 4.5-4.5C21 9 15 6 12 2z"/></svg></div>
+    </div>
+  </div>
+</header>
+
+<!-- DẢI CHỮ CHẠY -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span data-t="dai.chu"></span>
+    <span data-t="dai.chu"></span>
+  </div>
+</div>
+
+<!-- VỀ MÌNH -->
+<section class="light" id="about">
+  <div class="wrap">
+    <span class="eyebrow" data-t="gioiThieu.nhan"></span>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 data-t="gioiThieu.tieuDe"></h2>
+        <p data-t="gioiThieu.doan1"></p>
+        <p data-t="gioiThieu.doan2"></p>
+        <p data-t="gioiThieu.doan3"></p>
+        <p data-t="gioiThieu.doan4"></p>
+        <p class="sign it" data-t="gioiThieu.chuKy"></p>
+      </div>
+      <ul class="facts reveal">
+        <li><span class="k" data-t="thongTin.1.nhan"></span><span class="v" data-t="thongTin.1.noiDung"></span></li>
+        <li><span class="k" data-t="thongTin.2.nhan"></span><span class="v" data-t="thongTin.2.noiDung"></span></li>
+        <li><span class="k" data-t="thongTin.3.nhan"></span><span class="v" data-t="thongTin.3.noiDung"></span></li>
+        <li><span class="k" data-t="thongTin.4.nhan"></span><span class="v" data-t="thongTin.4.noiDung"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRIẾT LÝ -->
+<section id="philosophy">
+  <div class="wrap">
+    <span class="eyebrow" data-t="trietLy.nhan"></span>
+    <h2 class="reveal" data-t="trietLy.tieuDe"></h2>
+    <p class="lead reveal" data-t="trietLy.moTa"></p>
+    <div class="pillars">
+      <div class="pillar reveal"><figure class="pillar-img"><img data-anh="learn" alt="" loading="lazy"><figcaption data-t="trietLy.1.anhChu"></figcaption></figure><span class="no">01</span><h3 data-t="trietLy.1.ten"></h3><span class="it" data-t="trietLy.1.cau"></span><p data-t="trietLy.1.noiDung"></p></div>
+      <div class="pillar reveal"><figure class="pillar-img"><img data-anh="build" alt="" loading="lazy"><figcaption data-t="trietLy.2.anhChu"></figcaption></figure><span class="no">02</span><h3 data-t="trietLy.2.ten"></h3><span class="it" data-t="trietLy.2.cau"></span><p data-t="trietLy.2.noiDung"></p></div>
+      <div class="pillar reveal"><figure class="pillar-img"><img data-anh="inspire" alt="" loading="lazy"><figcaption data-t="trietLy.3.anhChu"></figcaption></figure><span class="no">03</span><h3 data-t="trietLy.3.ten"></h3><span class="it" data-t="trietLy.3.cau"></span><p data-t="trietLy.3.noiDung"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HÀNH TRÌNH -->
+<section class="light" id="journey">
+  <div class="wrap">
+    <span class="eyebrow" data-t="hanhTrinh.nhan"></span>
+    <h2 class="reveal" data-t="hanhTrinh.tieuDe"></h2>
+    <div class="chapters">
+      <div class="chapter reveal"><span class="lbl" data-t="hanhTrinh.1.nhan"></span><h3 data-t="hanhTrinh.1.ten"></h3><p data-t="hanhTrinh.1.noiDung"></p></div>
+      <div class="chapter reveal"><span class="lbl" data-t="hanhTrinh.2.nhan"></span><h3 data-t="hanhTrinh.2.ten"></h3><p data-t="hanhTrinh.2.noiDung"></p></div>
+      <div class="chapter reveal"><span class="lbl" data-t="hanhTrinh.3.nhan"></span><h3 data-t="hanhTrinh.3.ten"></h3><p data-t="hanhTrinh.3.noiDung"></p></div>
+      <div class="chapter reveal"><span class="lbl" data-t="hanhTrinh.4.nhan"></span><h3 data-t="hanhTrinh.4.ten"></h3><p data-t="hanhTrinh.4.noiDung"></p></div>
+      <div class="chapter reveal"><span class="lbl" data-t="hanhTrinh.5.nhan"></span><h3 data-t="hanhTrinh.5.ten"></h3><p data-t="hanhTrinh.5.noiDung"></p></div>
+    </div>
+    <p class="still it reveal" data-t="hanhTrinh.ketThuc"></p>
+  </div>
+</section>
+
+<!-- DỰ ÁN -->
+<section id="building">
+  <div class="wrap">
+    <span class="eyebrow" data-t="duAn.nhan"></span>
+    <h2 class="reveal" data-t="duAn.tieuDe"></h2>
+    <p class="lead reveal" data-t="duAn.moTa"></p>
+    <div class="builds">
+      <article class="build reveal"><span class="no">01</span><h3 data-t="duAn.1.ten"></h3><p data-t="duAn.1.noiDung"></p><span class="tag" data-t="duAn.1.nhan"></span></article>
+      <article class="build reveal"><span class="no">02</span><h3 data-t="duAn.2.ten"></h3><p data-t="duAn.2.noiDung"></p><span class="tag" data-t="duAn.2.nhan"></span></article>
+      <article class="build reveal"><span class="no">03</span><h3 data-t="duAn.3.ten"></h3><p data-t="duAn.3.noiDung"></p><span class="tag" data-t="duAn.3.nhan"></span></article>
+      <article class="build reveal"><span class="no">04</span><h3 data-t="duAn.4.ten"></h3><p data-t="duAn.4.noiDung"></p><span class="tag" data-t="duAn.4.nhan"></span></article>
+    </div>
+  </div>
+</section>
+
+<!-- BIỂU TƯỢNG -->
+<section class="light code" id="code">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center" data-t="bieuTuong.nhan"></span>
+    <h2 class="reveal"><span class="grad">1</span><span class="arr">→</span><span class="grad">13</span><span class="arr">→</span><span class="grad">777</span></h2>
+    <p class="lead reveal" data-t="bieuTuong.moTa"></p>
+    <div class="symbols">
+      <div class="sym reveal">
+        <div class="glyph"><span class="num grad">1</span><span class="king" aria-label="Quân Vua cờ vua">♚</span></div>
+        <h4 data-t="bieuTuong.1.ten"></h4><p data-t="bieuTuong.1.noiDung"></p><span class="it" data-t="bieuTuong.1.cau"></span>
+      </div>
+      <div class="sym reveal">
+        <div class="glyph"><span class="num grad">13</span><span class="mini-card" aria-label="K bích"><b>K</b><svg class="spade" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 3 9 3 13.5 3 16 5 18 7.5 18c1.4 0 2.6-.6 3.4-1.5L10 22h4l-.9-5.5c.8.9 2 1.5 3.4 1.5 2.5 0 4.5-2 4.5-4.5C21 9 15 6 12 2z"/></svg></span></div>
+        <h4 data-t="bieuTuong.2.ten"></h4><p data-t="bieuTuong.2.noiDung"></p><span class="it" data-t="bieuTuong.2.cau"></span>
+      </div>
+      <div class="sym reveal">
+        <div class="glyph"><span class="reels" aria-label="777 jackpot"><span>7</span><span>7</span><span>7</span></span></div>
+        <h4 data-t="bieuTuong.3.ten"></h4><p data-t="bieuTuong.3.noiDung"></p><span class="it" data-t="bieuTuong.3.cau"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEO DÕI / MẠNG XÃ HỘI -->
+<section id="world">
+  <div class="wrap">
+    <span class="eyebrow" data-t="kenh.nhan"></span>
+    <h2 class="reveal" data-t="kenh.tieuDe"></h2>
+    <p class="lead reveal" data-t="kenh.moTa"></p>
+    <div class="channels">
+      <a class="channel reveal" data-link="instagram" target="_blank" rel="noopener">
+        <span class="net">Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span>
+        <h3 data-t="kenh.instagram.ten"></h3><p data-t="kenh.instagram.moTa"></p><span class="go" data-t="kenh.nut"></span>
+      </a>
+      <a class="channel reveal" data-link="tiktok" target="_blank" rel="noopener">
+        <span class="net">TikTok <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.1-2.8V9.1a6.3 6.3 0 1 0 5.5 6.3V8.6a8 8 0 0 0 4.7 1.5V6.7a4.7 4.7 0 0 1-4.7-4.7z"/></svg></span>
+        <h3 data-t="kenh.tiktok.ten"></h3><p data-t="kenh.tiktok.moTa"></p><span class="go" data-t="kenh.nut"></span>
+      </a>
+      <a class="channel reveal" data-link="facebook" target="_blank" rel="noopener">
+        <span class="net">Facebook <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4 2.4-4 4v3H7v4h3v11h4V12h3.5l.5-4z"/></svg></span>
+        <h3 data-t="kenh.facebook.ten"></h3><p data-t="kenh.facebook.moTa"></p><span class="go" data-t="kenh.nut"></span>
+      </a>
+    </div>
+    <div class="topics reveal" id="topics"></div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="light manifesto">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="justify-content:center" data-t="tuyenNgon.nhan"></span>
+    <blockquote data-t="tuyenNgon.cau"></blockquote>
+    <p class="lines" data-t="tuyenNgon.dong"></p>
+    <div class="sig"><span data-t="tuyenNgon.ky1"></span><span data-t="tuyenNgon.ky2"></span><span data-t="tuyenNgon.ky3"></span></div>
+  </div>
+</section>
+
+<!-- LIÊN HỆ -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="justify-content:center" data-t="lienHe.nhan"></span>
+    <h2 data-t="lienHe.tieuDe"></h2>
+    <p class="lead" data-t="lienHe.moTa"></p>
+    <div class="contact-cta">
+      <a class="btn btn-zalo" data-link="zalo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span data-t="nut.zalo"></span></a>
+      <a class="btn btn-mess" data-link="messenger" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.4 2 2 6.1 2 11.6c0 2.9 1.2 5.4 3.1 7.1V22l2.9-1.6c1.2.3 2.5.5 4 .5 5.6 0 10-4.1 10-9.6S17.6 2 12 2zm1 12.9l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg><span data-t="nut.messenger"></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="logo-mark" data-t="logo.chu"></span></a>
+    <span class="it" data-t="chanTrang.cau"></span>
+    <span data-t="chanTrang.banQuyen"></span>
+  </div>
+</footer>
+
+<div class="fab">
+  <a class="m" data-link="messenger" target="_blank" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.4 2 2 6.1 2 11.6c0 2.9 1.2 5.4 3.1 7.1V22l2.9-1.6c1.2.3 2.5.5 4 .5 5.6 0 10-4.1 10-9.6S17.6 2 12 2zm1 12.9l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg></a>
+  <a class="z" data-link="zalo" target="_blank" rel="noopener" aria-label="Zalo">Zalo</a>
+</div>
+
+<!-- Nội dung (chữ, link, ảnh) nằm trong file noi-dung.js — sửa ở đó -->
+<script src="noi-dung.js" charset="utf-8"></script>
+<script>
+/* ===== Phần chạy web – KHÔNG cần sửa ===== */
+(function(){
+  const ok = typeof NOI_DUNG !== "undefined" && typeof CHUNG !== "undefined";
+  if (!ok) { document.getElementById("loiNoiDung").hidden = false; }
+
+  const lienKet = (typeof LIEN_KET !== "undefined") ? LIEN_KET : {};
+  const anh     = (typeof ANH !== "undefined") ? ANH : {};
+  const chuDe   = (typeof CHU_DE !== "undefined") ? CHU_DE : {vi:[],en:[]};
+
+  function setLang(lang){
+    if (!ok) return;
+    const d = Object.assign({}, CHUNG, NOI_DUNG[lang] || {});
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-t]").forEach(el => {
+      const k = el.dataset.t;
+      if (!(k in d)) console.warn("noi-dung.js: thiếu ô \"" + k + "\"");
+      el.innerHTML = d[k] ?? "";
+    });
+    // Ẩn nhãn nhỏ nếu để trống
+    document.querySelectorAll(".tag").forEach(t => t.hidden = !t.textContent.trim());
+    document.getElementById("topics").innerHTML =
+      (chuDe[lang] || []).map((t,i) => `<span><b>${String(i+1).padStart(2,"0")}</b>${t}</span>`).join("");
+    document.querySelectorAll("[data-set-lang]").forEach(b => b.classList.toggle("active", b.dataset.setLang === lang));
+  }
+  setLang("vi");
+  document.querySelectorAll("[data-set-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.setLang)));
+
+  // Link
+  document.querySelectorAll("[data-link]").forEach(a => { if (lienKet[a.dataset.link]) a.href = lienKet[a.dataset.link]; });
+
+  // Ảnh
+  document.querySelectorAll("[data-anh]").forEach(img => {
+    const a = anh[img.dataset.anh]; if (!a) return;
+    img.src = a.file + "?v=" + (anh.phienBan || 1);
+    if (a.viTri) img.style.objectPosition = a.viTri;
+    img.alt = a.moTa || "";
+  });
+
+  // Menu & hiệu ứng
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", scrollY > 20);
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  const links = document.getElementById("navLinks");
+  document.getElementById("menuBtn").addEventListener("click", () => links.classList.toggle("open"));
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

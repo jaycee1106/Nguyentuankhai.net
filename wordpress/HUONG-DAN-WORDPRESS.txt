@@ -1,0 +1,119 @@
+HƯỚNG DẪN WEBSITE nguyentuankhai.net – BẢN WORDPRESS
+=====================================================
+
+0. MỞ WEB TRÊN MÁY (LOCAL)
+--------------------------
+1. Mở Laragon → bấm "Start All" (Bắt đầu tất cả).
+2. Xem web:        http://localhost/nguyentuankhai
+   Bản tiếng Anh:  http://localhost/nguyentuankhai/en/
+   Trang quản trị: http://localhost/nguyentuankhai/wp-admin
+   (tên đăng nhập + mật khẩu: file TAI-KHOAN-LOCAL.txt cùng thư mục này)
+
+
+1. SỬA CHỮ / ẢNH TRÊN TRANG CHỦ
+-------------------------------
+- Vào Trang → Tất cả trang → bấm "Trang chủ" (tiếng Việt) hoặc "Home" (tiếng Anh).
+- Bấm vào chữ muốn sửa rồi gõ trực tiếp, giống soạn Word.
+- Chữ in nghiêng (Ctrl+I) = chữ màu gradient xanh (giống thẻ <em> ở bản cũ).
+- Đổi ảnh: bấm vào ảnh → thanh công cụ → "Thay thế" → chọn ảnh mới.
+  Ảnh nên nén trước: rộng 700–900px, dưới 300KB. Không cần tăng "phienBan" như bản cũ.
+- Sửa xong bấm "Lưu thay đổi" (góc trên bên phải). Nhớ sửa cả bản tiếng Anh.
+- Lỡ tay làm hỏng: nút "↶ Hoàn tác" (Ctrl+Z), hoặc bên phải → "Bản sửa đổi" để quay về bản cũ.
+
+Chèn lại một phần trang chủ đã xóa (Hero, Triết lý, Hành trình...):
+  Nút "+" (góc trên trái) → tab "Mẫu" → nhóm "Jaycee – Các phần trang chủ".
+
+Các "Kiểu" có sẵn (chọn khối → bên phải → mục "Kiểu"):
+  Nhóm:     Phần nền tối / Phần nền sáng / Thẻ tối / Thẻ trắng
+  Đoạn văn: Nhãn nhỏ có gạch / Đoạn mô tả lớn / Câu nghiêng nhấn / Nhãn bo tròn / Nhãn có chấm sáng
+  Nút:      Gradient + icon chat / Trong suốt + mũi tên / Xanh Zalo / Nền trắng + Messenger
+  Tiêu đề:  Chữ gradient / Siêu to, in hoa
+
+
+2. HIỆU ỨNG, VIDEO, ICON
+------------------------
+HIỆU ỨNG XUẤT HIỆN (dùng được cho MỌI khối):
+  Chọn khối → thanh bên phải → "✨ Hiệu ứng xuất hiện":
+  - Kiểu: Hiện dần + trượt lên / Hiện dần / Phóng to / Trượt từ trái / Trượt từ phải / Mờ → rõ
+          (Lặp) Bay lơ lửng / (Lặp) Nhịp đập
+  - Chờ trước khi chạy: làm khối xuất hiện chậm hơn (vd 200 = 0,2 giây)
+  - "Các khối con xuất hiện lần lượt": bật cho nhóm có nhiều thẻ → từng thẻ hiện nối tiếp.
+  Hiệu ứng chỉ chạy ngoài web → bấm "Xem trước" để thử.
+
+VIDEO:
+  - Video YouTube: dán link YouTube vào một dòng trống là tự thành khối video.
+  - Video làm nền cho một phần: thêm khối "Ảnh bìa" (Cover) → chọn file video (.mp4, nên < 10MB)
+    → đặt chữ/nút lên trên.
+
+ICON:
+  Nút "+" → tìm "Icon (Jaycee)" → bên phải chọn icon, cỡ, link, màu.
+  Có sẵn: Zalo, Messenger, Facebook, Instagram, TikTok, YouTube, LinkedIn, email, điện thoại,
+  mũi tên, bích ♠, vương miện, ngôi sao, tên lửa, bóng đèn, mục tiêu, sách...
+  Muốn thêm icon mới: nhờ thêm vào file jaycee/inc/icons.php.
+
+
+3. VIẾT BLOG
+------------
+- Bài viết → Viết bài mới. Nhớ chọn "Ảnh đại diện" (bên phải): hiện ở thẻ bài viết
+  và khi chia sẻ lên Facebook/Zalo.
+- Ô "Tóm tắt" (Excerpt) = đoạn mô tả hiện trên thẻ và trên Google.
+- Bài tiếng Anh: ở danh sách bài viết, bấm dấu "+" ở cột cờ 🇺🇸 để tạo bản dịch.
+- Bài mới tự hiện ở trang Blog và ở phần "Ghi chép mới nhất" trên trang chủ.
+- Có 1 bài viết mẫu: sửa thành bài thật hoặc xóa đi.
+
+
+4. THÊM DỰ ÁN (PORTFOLIO)
+-------------------------
+- Menu trái "Dự án" → Thêm dự án.
+  Tiêu đề = tên dự án · Nội dung = mô tả chi tiết (thêm ảnh, video thoải mái)
+  Ô "Tóm tắt" = câu mô tả ngắn hiện trên thẻ · "Nhãn nhỏ trên thẻ dự án" (bên phải), vd "LUẬT VIỆT Á"
+  Ảnh đại diện = ảnh hiện trên thẻ ở trang /du-an/
+- Trang chủ tự hiện 4 dự án mới nhất. Muốn đổi thứ tự: sửa "Ngày đăng" của dự án.
+- Bản tiếng Anh: bấm "+" ở cột cờ 🇺🇸, giống bài viết.
+
+
+5. MENU, LINK MẠNG XÃ HỘI, CHÂN TRANG
+-------------------------------------
+- Menu đầu trang: Giao diện → Menu. Có 2 menu: "Menu chính (Tiếng Việt)" và "Main menu (English)".
+- Link Zalo/Messenger/Instagram/TikTok/Facebook trên trang chủ: sửa thẳng trong trang chủ
+  (bấm nút/tiêu đề → biểu tượng link).
+- Nút chat nổi góc phải + chân trang: Giao diện → Trình chỉnh sửa → Mẫu → "Chân trang + nút chat nổi"
+  → bấm từng icon → bên phải sửa link.
+- Mô tả Google/Facebook của trang chủ: sửa ô "Tóm tắt" của trang "Trang chủ" / "Home".
+
+
+6. CHUYỂN LÊN HOSTING nguyentuankhai.net (cPanel)
+-------------------------------------------------
+Chuẩn bị (trên máy):
+  1. Vào trang quản trị local → Plugin → Cài mới → tìm "All-in-One WP Migration" → Cài đặt → Kích hoạt.
+  2. Menu trái "All-in-One WP Migration" → Xuất (Export) → Xuất ra → Tệp (File) → tải file .wpress về máy.
+
+Trên hosting:
+  3. SAO LƯU bản HTML cũ: vào cPanel → File Manager → public_html → nén (Compress) các file
+     index.html, noi-dung.js, images/ thành 1 file zip rồi tải về máy.
+  4. XÓA (hoặc đổi tên) file index.html cũ trong public_html.
+     QUAN TRỌNG: nếu còn index.html, hosting sẽ vẫn mở trang HTML cũ chứ không mở WordPress.
+  5. cPanel → Softaculous (hoặc "WordPress Manager") → cài WordPress vào nguyentuankhai.net
+     (để trống ô thư mục / Directory, chọn https://). Tài khoản tạo lúc này chỉ dùng tạm.
+  6. Đăng nhập WordPress trên hosting → cài plugin "All-in-One WP Migration" → Nhập (Import)
+     → kéo file .wpress vào → bấm "Tiếp tục" → "Hoàn tất".
+     Plugin tự đổi toàn bộ link localhost thành https://nguyentuankhai.net.
+  7. Đăng nhập lại bằng tài khoản LOCAL (trong TAI-KHOAN-LOCAL.txt) → Cài đặt → Đường dẫn tĩnh
+     → bấm "Lưu thay đổi" 2 lần (để /en/, /blog/, /du-an/ chạy đúng).
+  8. Người dùng → Hồ sơ: ĐỔI MẬT KHẨU MẠNH và đổi email thật. Xóa plugin All-in-One WP Migration
+     nếu không dùng nữa.
+  9. Kiểm tra: trang chủ, /en/, /blog/, /du-an/, nút Zalo, xem trên điện thoại.
+     Dán link vào https://developers.facebook.com/tools/debug/ → "Scrape again" để Facebook/Zalo
+     nhận ảnh chia sẻ mới.
+
+Nếu file .wpress lớn hơn giới hạn upload của bản miễn phí: nén ảnh lại cho nhẹ, hoặc nhờ
+hỗ trợ của hosting tăng "upload_max_filesize".
+
+
+7. KHI CẦN NHỜ SỬA GIAO DIỆN (dành cho người hỗ trợ kỹ thuật)
+-------------------------------------------------------------
+  wordpress/jaycee/       theme (theme.json, templates/, parts/, inc/, assets/css/jaycee.css)
+  wordpress/jaycee-core/  plugin loại nội dung "Dự án"
+  wordpress/setup/        script dựng nội dung lần đầu (không cần chạy lại)
+  Hai thư mục jaycee & jaycee-core được nối vào D:\laragon\www\nguyentuankhai\wp-content\.
+  Sửa CSS trong jaycee.css → tải lại trang là thấy (không cần build).

@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"jc-main","layout":{"type":"default"}} -->
+<main class="wp-block-group jc-main"><!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-dark jc-page-hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-dark jc-page-hero"><!-- wp:jaycee/text {"vi":"Đang xây","en":"Building","className":"is-style-jc-eyebrow"} /-->
+
+<!-- wp:jaycee/text {"vi":"Những thứ mình <em>đang xây.</em>","en":"What I’m <em>building.</em>","tagName":"h1","className":"jc-page-title","jcAnim":"fade-up"} /-->
+
+<!-- wp:jaycee/text {"vi":"Không phải portfolio agency — chỉ là những gì một người thích xây dựng đang làm mỗi ngày.","en":"Not an agency portfolio — just what someone who loves building is working on every day.","className":"is-style-jc-lead","jcAnim":"fade-up","jcDelay":120} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-dark jc-alt jc-archive","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-dark jc-alt jc-archive"><!-- wp:query {"queryId":43,"query":{"perPage":12,"pages":0,"offset":0,"postType":"du-an","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"jc-builds"} -->
+<div class="wp-block-query jc-builds"><!-- wp:post-template {"className":"jc-grid-2","jcStagger":true} -->
+<!-- wp:group {"className":"is-style-jc-card jc-build"} -->
+<div class="wp-block-group is-style-jc-card jc-build"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","className":"jc-build-thumb"} /-->
+
+<!-- wp:post-title {"level":2,"isLink":true} /-->
+
+<!-- wp:post-excerpt {"moreText":"","excerptLength":40} /-->
+
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"jc_nhan"}}}},"className":"jc-tag"} -->
+<p class="jc-tag"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"className":"jc-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:jaycee/text {"vi":"Dự án đầu tiên sắp được cập nhật.","en":"The first project is coming soon.","className":"jc-empty"} /-->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

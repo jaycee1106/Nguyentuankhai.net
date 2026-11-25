@@ -1,0 +1,78 @@
+HƯỚNG DẪN TỰ CHỈNH WEBSITE nguyentuankhai.net
+==============================================
+
+CẤU TRÚC THƯ MỤC (upload y nguyên lên hosting, thư mục public_html)
+-------------------------------------------------------------------
+  index.html      → khung trang (hầu như không cần sửa)
+  noi-dung.js     → TOÀN BỘ chữ, link, thông số ảnh  ← sửa ở đây
+  images/
+     hero.jpg     → ảnh trong thẻ bài K♠ đầu trang (khung DỌC)
+     learn.jpg    → ảnh thẻ LEARN   (khung ngang 4:3)
+     build.jpg    → ảnh thẻ BUILD   (khung ngang 4:3)
+     inspire.jpg  → ảnh thẻ INSPIRE (khung ngang 4:3)
+     share.jpg    → ảnh hiện khi dán link web lên Facebook/Zalo (1200x630)
+  HUONG-DAN.txt   → file này (không cần upload)
+
+
+A. ĐỔI ẢNH
+----------
+1. Chuẩn bị ảnh mới, đổi tên ĐÚNG tên file muốn thay (vd: build.jpg).
+   - Phải là đuôi .jpg. Ảnh .png/.jpeg → mở bằng Paint → Save as → JPEG, đặt tên build.jpg.
+   - Nên dưới 500KB để web tải nhanh. Ảnh quá nặng → nén tại tinypng.com (miễn phí).
+2. Dán đè vào thư mục images/ → upload đè file đó lên hosting (thư mục images/).
+3. Mở noi-dung.js → phần "2. ẢNH" → tăng  phienBan: 1  thành  phienBan: 2
+   (lần sau 3, 4...) → upload noi-dung.js.
+   Việc này giúp người xem thấy ảnh mới ngay, không bị hiện ảnh cũ.
+4. Ảnh bị cắt mất đầu / lệch? → chỉnh "viTri" của ảnh đó trong noi-dung.js:
+     "50% 20%" = giữ phần trên   "50% 80%" = giữ phần dưới
+     "30% 50%" = giữ bên trái    "70% 50%" = giữ bên phải
+
+   Đổi chú thích nhỏ trên ảnh (vd "ĐI ĐỂ LỚN"): sửa "trietLy.2.anhChu" trong noi-dung.js.
+
+
+B. SỬA CHỮ
+----------
+1. Mở noi-dung.js bằng Notepad (chuột phải → Open with → Notepad)
+   hoặc Notepad++ / VS Code (dễ nhìn hơn, có tô màu).
+2. Tìm câu cần sửa bằng Ctrl+F (gõ vài chữ đang thấy trên web).
+3. Chỉ sửa chữ nằm giữa hai dấu ngoặc kép ở bên PHẢI:
+        "hero.moTa": "Sửa chữ ở đây",
+4. GIỮ NGUYÊN dấu " và dấu phẩy , cuối dòng.
+   Cần ngoặc kép trong câu → dùng “ ” hoặc ' '.
+5. Lưu (Ctrl+S). Nếu Notepad hỏi mã hóa → chọn UTF-8.
+6. Xem thử: mở index.html bằng Chrome trên máy (nhấn F5 để tải lại sau mỗi lần sửa).
+7. Đúng ý → upload noi-dung.js đè lên hosting.
+
+Ký hiệu dùng trong chữ:
+   <br>                  xuống dòng
+   <em>chữ</em>          chữ màu gradient xanh
+   <strong>chữ</strong>  chữ đậm
+   <small>chữ</small>    dòng chữ nhỏ bên dưới (ô "Thông tin nhanh")
+
+Mẹo:
+- Chữ giống nhau ở 2 ngôn ngữ (khẩu hiệu tiếng Anh, tên kênh...) nằm ở phần "3. CHỮ DÙNG CHUNG".
+- Chữ tiếng Việt ở phần "vi", tiếng Anh ở phần "en". Sửa tiếng Việt nhớ sửa luôn tiếng Anh.
+- Nhãn nhỏ ở thẻ Dự án (vd "LUẬT VIỆT Á"): để "" thì nhãn tự ẩn; gõ chữ vào thì nhãn hiện.
+  Ví dụ thêm Nai House:  "duAn.1.nhan": "NAI EVENT",
+- Đổi link Zalo / Messenger / Facebook / Instagram / TikTok: phần "1. LINK LIÊN HỆ".
+
+
+C. LỠ SỬA SAI
+-------------
+- Web hiện dải ĐỎ "Lỗi file noi-dung.js" → thiếu/dư dấu " hoặc dấu , ở dòng vừa sửa.
+  Bấm Ctrl+Z trong Notepad để hoàn tác, hoặc so với bản sao lưu.
+- Thói quen tốt: trước khi sửa, copy noi-dung.js thành noi-dung-backup.js.
+- Chữ trên web trống trơn ở một chỗ → có thể đã xóa nhầm TÊN Ô bên trái. Mở Chrome,
+  nhấn F12 → tab Console sẽ báo  thiếu ô "..."  để biết ô nào bị mất.
+
+
+D. TIÊU ĐỀ & MÔ TẢ HIỆN TRÊN GOOGLE / FACEBOOK
+----------------------------------------------
+Phần này nằm ở đầu file index.html (khoảng dòng 6–15):
+   <title>...</title>                         tiêu đề tab trình duyệt & Google
+   <meta name="description" content="...">    mô tả trên Google
+   <meta property="og:title" ...>             tiêu đề khi chia sẻ link
+   <meta property="og:description" ...>       mô tả khi chia sẻ link
+Chỉ sửa chữ trong dấu ngoặc kép sau content="  ... ".
+Sau khi đổi share.jpg hoặc og:..., vào https://developers.facebook.com/tools/debug/
+dán link nguyentuankhai.net → bấm "Scrape Again" để Facebook cập nhật ảnh mới.

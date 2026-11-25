@@ -1,0 +1,33 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"jc-main","layout":{"type":"default"}} -->
+<main class="wp-block-group jc-main"><!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-dark jc-page-hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-dark jc-page-hero"><!-- wp:jaycee/text {"vi":"Nhật ký","en":"Journal","className":"is-style-jc-eyebrow"} /-->
+
+<!-- wp:query-title {"type":"archive","showPrefix":false,"className":"jc-page-title","jcAnim":"fade-up"} /-->
+
+<!-- wp:term-description {"className":"is-style-jc-lead"} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-light jc-archive","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-light jc-archive"><!-- wp:query {"queryId":42,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"jc-posts"} -->
+<div class="wp-block-query jc-posts"><!-- wp:post-template {"className":"jc-grid-3","jcStagger":true} -->
+<!-- wp:pattern {"slug":"jaycee/post-card"} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"className":"jc-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:jaycee/text {"vi":"Chưa có bài viết nào ở đây.","en":"Nothing here yet.","className":"jc-empty"} /-->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -1,0 +1,33 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"jc-main","layout":{"type":"default"}} -->
+<main class="wp-block-group jc-main"><!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-dark jc-page-hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-dark jc-page-hero"><!-- wp:jaycee/text {"vi":"Nhật ký","en":"Journal","className":"is-style-jc-eyebrow"} /-->
+
+<!-- wp:jaycee/text {"vi":"Ghi chép trên <em>hành trình.</em>","en":"Notes from <em>the journey.</em>","tagName":"h1","className":"jc-page-title","jcAnim":"fade-up"} /-->
+
+<!-- wp:jaycee/text {"vi":"Những suy nghĩ, bài học và ghi chép — viết ra để nhớ, chia sẻ để lan tỏa.","en":"Thoughts, lessons and notes — written to remember, shared to inspire.","className":"is-style-jc-lead","jcAnim":"fade-up","jcDelay":120} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","className":"is-style-jc-light jc-archive","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull is-style-jc-light jc-archive"><!-- wp:query {"queryId":41,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"jc-posts"} -->
+<div class="wp-block-query jc-posts"><!-- wp:post-template {"className":"jc-grid-3","jcStagger":true} -->
+<!-- wp:pattern {"slug":"jaycee/post-card"} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"className":"jc-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:jaycee/text {"vi":"Bài viết đầu tiên sắp lên sóng.","en":"The first post is coming soon.","className":"jc-empty"} /-->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

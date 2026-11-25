@@ -1,0 +1,19 @@
+# Mật khẩu / tài khoản – KHÔNG đưa lên GitHub
+wordpress/TAI-KHOAN-LOCAL.txt
+*.env
+wp-config.php
+
+# File sao lưu site (nặng, chứa cả database)
+*.wpress
+*.sql
+*.zip
+
+# Ảnh gốc chưa nén
+Ảnh Khải/
+
+# Thư mục của hosting
+cgi-bin/
+
+# Rác của Windows
+Thumbs.db
+desktop.ini
